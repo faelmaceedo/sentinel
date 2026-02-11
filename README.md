@@ -1,4 +1,4 @@
-# 🛡️ SEPLAN SENTINEL v2.0
+# 🛡️ SENTINEL v2.0
 
 > **NOC Dashboard & Infrastructure Monitor** — Sistema de monitoramento tático em tempo real desenvolvido para visualização de ativos de rede, servidores e infraestrutura crítica.
 
