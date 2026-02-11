@@ -40,14 +40,14 @@ npm install
 Configure as Variáveis de Ambiente (.env.local):
 
 Snippet de código
+   ```
 NEXT_PUBLIC_SUPABASE_URL=seu_url_supabase
 NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anon_supabase
 ADMIN_USER=admin
 ADMIN_PASS=sua_senha_segura
 
 Inicie o Ambiente de Desenvolvimento:
-
-
+   ```
 npm run dev
 🏗️ Estrutura de Pastas
 Plaintext
