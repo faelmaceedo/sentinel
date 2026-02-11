@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 🛡️ SEPLAN SENTINEL v2.0
+=======
+# 🛡️ SENTINEL v2.0
+>>>>>>> 4fd77440cda9e1ebc8ece5bc4eef43107fc8c555
 
 > **NOC Dashboard & Infrastructure Monitor** — Sistema de monitoramento tático em tempo real desenvolvido para visualização de ativos de rede, servidores e infraestrutura crítica.
 
@@ -81,5 +85,3 @@ Para enviar tudo para o GitHub agora com as versões refinadas:
     ```
     git push origin main
     ```
-
----
