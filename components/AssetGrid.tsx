@@ -9,7 +9,6 @@ interface AssetGridProps {
   category?: string;
 }
 
-// Tipo do Dado vindo do Banco
 interface Asset {
   id: string;
   name: string;
@@ -22,9 +21,10 @@ export function AssetGrid({ category }: AssetGridProps) {
   const [assets, setAssets] = useState<Asset[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Busca inicial
   useEffect(() => {
     async function fetchAssets() {
-      let query = supabase.from('assets').select('*');
+      let query = supabase.from('assets').select('*').order('created_at', { ascending: true });
       
       if (category) {
         query = query.eq('category', category);
@@ -41,6 +41,11 @@ export function AssetGrid({ category }: AssetGridProps) {
     fetchAssets();
   }, [category]);
 
+  // Função chamada quando um card é deletado
+  const handleAssetDelete = (deletedId: string) => {
+    setAssets((prevAssets) => prevAssets.filter(asset => asset.id !== deletedId));
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
@@ -53,7 +58,7 @@ export function AssetGrid({ category }: AssetGridProps) {
     return (
       <div className="flex flex-col items-center justify-center h-64 text-zinc-500 border border-dashed border-zinc-800 rounded-xl bg-zinc-900/20">
         <ShieldAlert className="w-12 h-12 mb-4 opacity-50" />
-        <p>Nenhum ativo encontrado no banco de dados.</p>
+        <p>Nenhum ativo encontrado nesta frequência.</p>
       </div>
     );
   }
@@ -63,9 +68,11 @@ export function AssetGrid({ category }: AssetGridProps) {
       {assets.map((asset) => (
         <AssetCard 
           key={asset.id}
+          id={asset.id}         // Passando o ID
           name={asset.name}
           ip={asset.ip}
           port={asset.port}
+          onDelete={handleAssetDelete} // Passando a função
         />
       ))}
     </div>
