@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  sentinel-noc:
+    build: .
+    container_name: sentinel_v2
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    # Necessário para que o container tenha permissão de enviar pacotes ICMP (Ping)
+    cap_add:
+      - NET_RAW
+    networks:
+      - sentinel_network
+
+networks:
+  sentinel_network:
+    driver: bridge
