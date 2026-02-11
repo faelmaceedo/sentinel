@@ -24,33 +24,40 @@ O **Sentinel** é um dashboard de monitoramento de ativos que utiliza escaneamen
 
 ## 🛠️ Stack Técnica
 
-- **Frontend:** Next.js 14 (App Router), Tailwind CSS.
-- **Backend:** Serverless Routes (Next.js), Supabase (PostgreSQL).
-- **Monitoramento:** Engine baseada na biblioteca `ping` para Node.js.
-- **Visualização:** Recharts para gráficos de latência.
+* **Frontend:** Next.js 14 (App Router), Tailwind CSS.
+* **Backend:** Serverless Routes (Next.js), Supabase (PostgreSQL).
+* **Monitoramento:** Engine baseada na biblioteca `ping` para Node.js.
+* **Visualização:** Recharts para gráficos de latência.
 
 ## ⚙️ Instalação e Configuração
 
-1. **Clone o repositório:**
-   ```
-   git clone [https://github.com/seu-usuario/seplan-sentinel.git](https://github.com/seu-usuario/seplan-sentinel.git)
-Instale as dependências:
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/seu-usuario/seplan-sentinel.git](https://github.com/seu-usuario/seplan-sentinel.git)
+    cd seplan-sentinel
+    ```
 
-npm install
-Configure as Variáveis de Ambiente (.env.local):
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
 
-Snippet de código
-   ```
-NEXT_PUBLIC_SUPABASE_URL=seu_url_supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anon_supabase
-ADMIN_USER=admin
-ADMIN_PASS=sua_senha_segura
+3.  **Configure as Variáveis de Ambiente (`.env.local`):**
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=seu_url_supabase
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave_anon_supabase
+    ADMIN_USER=admin
+    ADMIN_PASS=sua_senha_segura
+    ```
 
-Inicie o Ambiente de Desenvolvimento:
-   ```
-npm run dev
-🏗️ Estrutura de Pastas
-Plaintext
+4.  **Inicie o Ambiente de Desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+
+## 🏗️ Estrutura de Pastas
+
+```plaintext
 ├── app/
 │   ├── api/scan/      # Engine de monitoramento (Backend)
 │   ├── dashboard/     # Painel principal e sub-páginas
@@ -58,26 +65,3 @@ Plaintext
 ├── components/        # UI Components (Cards, Gráficos, Modais)
 ├── lib/               # Configurações de API e Supabase
 └── public/            # Ativos estáticos
-Desenvolvido com foco em Alta Disponibilidade e Visualização Crítica.
-
-
----
-
-### 🚀 2. O Script de Commit (Finalização)
-
-Para enviar tudo para o GitHub agora com as versões refinadas:
-
-1.  **Adicione os novos arquivos:**
-    ```
-    git add .
-    ```
-
-2.  **Commit Tático:**
-    ```
-    git commit -m "feat: implement analytics history, hybrid icmp scan and refined ux with toasts"
-    ```
-
-3.  **Push para o QG (GitHub):**
-    ```
-    git push origin main
-    ```
